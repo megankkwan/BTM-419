@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authentication</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/authenticationstyle.css' %}"/>  </head>
+  </head>
+  <body>
+    {% for message in messages %}
+    <div class="alert alert - {{ message.tags}} alert-dissmissible fade show" role="alert">    
+        <form action="/signin" method="post" class="form">
+          <strong>Message:</strong> {{message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+      <br>
+
+      <div class="container">
+      <form action="" class="form">
+      {%csrf_token%}
+      <h1 class="form__title">Create Your Account</h1>
+
+      <label for="">Username</label>
+      <div class="form__input-group">
+      <input type="text" class="form__input" id="username" name="username" placeholder="Enter your username" Required>
+      <br>
+  
+      <label for="">First Name</label>
+      <input type="text" class="form__input" id="fname" name="fname" placeholder="Enter your first name" Required>
+      <br>
+
+      <label for="">Last Name</label>
+      <input type="text" class="form__input" id="lname" name="lname" placeholder="Enter your last name" Required>
+      <br>
+
+      <label for="">Email Address</label>
+      <input type="email" class="form__input" id="email" name="email" placeholder="Enter your email address" Required>
+      <br>
+
+      <label for="">Password</label>
+      <input type="password" class="form__input" id="pass1" name="pass1" placeholder="Create a password" Required>
+      <br>
+
+      <label for="">Confirm Password</label>
+      <input type="password" class="form__input" id="pass2" name="pass2" placeholder="Confirm your password" Required>
+      <br>
+
+      <button class="form__button" type="submit">Sign Up</button>
+
+    </form>
+  </div>
+
+  </body>
+</html>

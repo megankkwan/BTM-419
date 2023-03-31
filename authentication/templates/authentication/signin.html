@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Authentication</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/authenticationstyle.css' %}"/>  </head>
+  <body>
+    <div class="container">       
+        <form action="/signin" method="post" class="form">
+            {% csrf_token %}
+            <h1 class="form__title">Sign In</h1> 
+
+        <label for="">Username</label>
+        <input type="text" class="form__input" id="username" name="username" placeholder="Enter your username" Required>
+        <br>
+
+        <label for="">Password</label>
+        <input type="password" class="form__input" id="pass1" name="pass1" placeholder="Enter your password" Required>
+        <br>
+
+        <button class="form__button" type="submit">Sign In</button>
+
+        </form>
+    </div>
+        
+	<script src="index.js"></script>
+  </body>
+</html>
